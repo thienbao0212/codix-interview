@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="page-contain">
+    <app-my-profile *ngIf="showProfile" (outProfile)="outProfile($event)"></app-my-profile>
+    <router-outlet *ngIf="!showProfile"></router-outlet>
+</div>

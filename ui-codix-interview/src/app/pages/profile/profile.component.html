@@ -1,0 +1,61 @@
+<!-- <img class="style-img"
+         src="https://media.istockphoto.com/photos/abstract-modern-technical-background-picture-id506395372"
+         alt=""> -->
+<div class="profile d-flex justify-content-center">
+    
+    <div class="profile-content">
+        <nz-alert *ngIf="isSaveSccess" class="pt-3"  [nzShowIcon]="true" nzType="success" nzMessage="Save Success"></nz-alert>
+        <div class="title">
+            <label class="title-1">Your</label>
+            <label class="title-2">Information</label>
+        </div>
+        <div class="grp-form-login">
+            
+          <div class="form-data">
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="login-form">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nickname">Nickname</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                  <input nz-input formControlName="nickName" id="nickname" />
+                </nz-form-control>
+                <span *ngIf="submitted && validateForm.controls.nickName.errors" class="error">
+                  Please input your nick name!
+                </span>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                  <input nz-input formControlName="email" id="email" />
+                </nz-form-control>
+                <span *ngIf="submitted && validateForm.controls.email.errors" class="error">
+                  Please input your Email!
+                </span>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="phoneNumber">Phone</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                  <input nz-input formControlName="phone" id="phoneNumber" />
+                </nz-form-control>
+                <span *ngIf="submitted && validateForm.controls.phone.errors" class="error">
+                  Please input your Phone number!
+                </span>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="countryID">Country</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                  <nz-select formControlName="countryID" nzAllowClear nzPlaceHolder="Choose" [nzOptions]="listCountry"></nz-select>
+                </nz-form-control>
+                <span *ngIf="submitted && validateForm.controls.countryID.errors" class="error">
+                  Please input your Country!
+                </span>
+              </nz-form-item>
+              <nz-form-item nz-row class="register-area">
+                <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                  <button nz-button nzType="primary" class="btn-register">Update</button>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>

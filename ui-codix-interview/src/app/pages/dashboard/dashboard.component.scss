@@ -1,0 +1,36 @@
+.profile {
+    // background-image: url("http://calmes.like-themes.com/wp-content/uploads/2019/06/inner_header-4.jpg");
+    .profile-content {
+        width: 800px;
+        .item-func {
+            color: white;
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-width: 4px;
+            border-color: #045d77;
+            border-radius: 43px;
+            background: #122f5a;
+            padding: 17px;
+            padding-top: 50px;
+            font-size: 16pt;
+            position: relative;
+            cursor: pointer;
+            margin: 28px;
+            i {
+                font-size: 22pt;
+                position: absolute;
+                top: 22px;
+                left: 31px;
+                color: #c3c3c3;
+            }
+            &:hover {
+                padding: 13px;
+                font-size: 18pt;
+                i {
+                    top: 46px;
+                }
+            }
+        }
+    }
+}

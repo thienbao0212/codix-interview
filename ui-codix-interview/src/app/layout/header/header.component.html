@@ -1,0 +1,27 @@
+<nav>
+
+  <div [routerLink]="['/']" class="d-flex home-page"><img
+      src="https://png2.cleanpng.com/sh/234c3df061c32828f0c23fe84a853c8c/L0KzQYm3VMExN6FrfZH0aYP2gLBuTfxwb5CyjOdrZYLmhb32kBl0NZN3edDtLYP8fbP2jL11al46edVsY0a6SIrtWMZmQF86Sqo5MkW6Q4K8UsM0Pmo6UaQBNUO3PsH1h5==/kisspng-logo-tuberculosis-brand-symbol-tb-5accc6789f86e8.5280257315233695926534.png"
+      class="icon-nav">
+      <div class="header-title">
+        <label class=""><span class="h3 title-1">CODIX</span> <span class="h5  title-2">Interview</span></label>
+        <div class="title-des">Login | Register | Edit Profile page | Develop by: NTBao | Phone: 036.769.5505</div>
+      </div>
+   
+  </div>
+  <ng-container *ngIf="(isLoggedIn$ | async)">
+    <img class="avatar" nz-dropdown [nzDropdownMenu]="menu"
+      src="https://img.hoidap247.com/picture/question/20210116/large_1610807966202.jpg">
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item (click)="goProfile()">Profile</li>
+        <li nz-menu-item (click)="logOut()">Log out</li>
+      </ul>
+    </nz-dropdown-menu>
+  </ng-container>
+  <ng-container *ngIf="!(isLoggedIn$ | async)">
+
+  </ng-container>
+  <ng-template #notLoggedIn>
+  </ng-template>
+</nav>

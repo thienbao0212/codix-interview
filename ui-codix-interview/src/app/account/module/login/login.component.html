@@ -1,0 +1,55 @@
+<div class="row">
+  
+    <img class="style-img"
+         src="https://uigaint.com/demo/html/anfra_2/version1/images/bg/bg.jpg"
+         alt="">
+  <div class="grp-form-login">
+    
+    <div class="title">
+      <span class="semibold">Cod</span><span class="light">ix</span>
+      <span class="infomation">Interview</span>
+    </div>
+    <div *ngIf="messageErr" class="alert-err p-1">
+      <i nz-icon nzType="close-circle" nzTheme="outline" class="pb-1"></i> <label>{{messageErr}}</label>
+    </div>
+    <div class="title-child pb-2">
+      <label>Login</label>
+    </div>
+   
+    <div class="form-data">
+      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="user">
+              <input type="text" nz-input formControlName="nickName" placeholder="Nick Name" />
+             </nz-input-group>
+            <span *ngIf="submitted && validateForm.controls.nickName.errors" class="error">
+              Please input your nick name!
+            </span>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="lock">
+              <input type="password" nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+            <span *ngIf="submitted && validateForm.controls.password.errors" class="error">
+              Please input your Password!
+            </span>
+          </nz-form-control>
+          
+        </nz-form-item>
+        <div nz-row class="login-form-margin">
+          <div nz-col [nzSpan]="12">
+            <label nz-checkbox formControlName="remember">
+              <span>Remember me</span>
+            </label>
+          </div>
+        </div>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+        Or <a class="register" routerLink="../register"> register now! </a>
+      </form>
+    </div>
+  </div>
+
+</div>

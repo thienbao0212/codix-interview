@@ -1,0 +1,59 @@
+<!-- <div [style.width.px]="sidebarWidth"
+     class="sidebar">
+    <div class="sidebar-content">
+        <div class="flex px-1 py-6">
+        </div>
+        <div *ngFor="let link of sideBarLinks; let idx = index" routerLinkActive="active">
+            <a *ngIf="link.LandingPageURL"
+               [routerLink]="[link.LandingPageURL]"
+               routerLinkActive="active"
+               class="link allowed">
+                <svg-icon class="mr-4"
+                          [name]="link.IconPath"
+                          [size]="20">
+                </svg-icon>
+
+                <div class="pt-px text-15">{{ link.AppTitle }}</div>
+            </a>
+            <div *ngIf="!link.LandingPageURL"
+                 class="link not-allowed">
+                <svg-icon class="mr-4"
+                          [name]="link.IconPath"
+                          [size]="24">
+                </svg-icon>
+                <div class="pt-px text-15">{{ link.AppTitle }}</div>
+                <div class="not-implemented">
+                    Not implemented
+                </div>
+            </div>
+            <ng-container  *ngIf="link.Children.length > 0">
+
+                <div class="child-menu" *ngFor="let links of link.Children; let idx = index">
+                    <a *ngIf="links.LandingPageURL"
+                       [routerLink]="[links.LandingPageURL]"
+                       routerLinkActive="active"
+                       class="link allowed">
+                        <svg-icon class="mr-4"
+                                  [name]="links.IconPath"
+                                  [size]="20">
+                        </svg-icon>
+        
+                        <div class="pt-px text-15">{{ links.AppTitle }}</div>
+                    </a>
+                    <div *ngIf="!links.LandingPageURL"
+                         class="link not-allowed">
+                        <svg-icon class="mr-4"
+                                  [name]="links.IconPath"
+                                  [size]="24">
+                        </svg-icon>
+                        <div class="pt-px text-15">{{ links.AppTitle }}</div>
+                        <div class="not-implemented">
+                            Not implemented
+                        </div>
+                    </div>
+        
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div> -->

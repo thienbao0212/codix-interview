@@ -1,0 +1,86 @@
+<div class="row">
+  <img class="style-img" src="https://uigaint.com/demo/html/anfra_2/version1/images/bg/bg.jpg" alt="">
+  <div class="grp-form-login">
+    <div class="title">
+      <span class="semibold">Cod</span><span class="light">ix</span>
+      <span class="infomation">Interview</span>
+    </div>
+    <div *ngIf="messageErr" class="alert-err p-1">
+      <i nz-icon nzType="close-circle" nzTheme="outline" class="pb-1"></i> <label>{{messageErr}}</label>
+    </div>
+    <div class="title-child pb-2">
+      <label>Register</label>
+    </div>
+    <div class="form-data">
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="login-form">
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nickname">Nickname</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input formControlName="nickName" id="nickname" />
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.nickName.errors" class="error">
+            Please input your nick name!
+          </span>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input formControlName="email" id="email" />
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.email.errors" class="error">
+            Please input your Email!
+          </span>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="password" id="password" formControlName="password"
+              (ngModelChange)="updateConfirmValidator()" />
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.password.errors" class="error">
+            Please input your Password!
+          </span>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="confirmPassword" nzRequired>Confirm Password</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="password" formControlName="confirmPassword" id="confirmPassword" />
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.confirmPassword.errors" class="error">
+            <ng-container *ngIf="validateForm.controls.confirmPassword.hasError('required')">
+              Please confirm your password!
+            </ng-container>
+            <ng-container *ngIf="validateForm.controls.confirmPassword.hasError('confirm')">
+              Two passwords that you enter is inconsistent!
+            </ng-container>
+          </span>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="phoneNumber">Phone</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input formControlName="phone" id="phoneNumber" />
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.phone.errors" class="error">
+            Please input your Phone number!
+          </span>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="countryID">Country</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-select formControlName="countryID" nzAllowClear nzPlaceHolder="Choose" [nzOptions]="listCountry"></nz-select>
+          </nz-form-control>
+          <span *ngIf="submitted && validateForm.controls.countryID.errors" class="error">
+            Please input your Country!
+          </span>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <a nz-button routerLink="../login">
+              <i nz-icon nzType="left"></i>Back</a>
+            <button nz-button nzType="primary" class="btn-register">Register</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+</div>

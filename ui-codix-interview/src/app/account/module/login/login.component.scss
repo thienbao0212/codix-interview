@@ -1,0 +1,77 @@
+
+.account-login {
+  background-repeat: no-repeat;
+  background-position: 50px 70px;
+  &.background-opacity:before {
+    background: linear-gradient(
+      90deg,
+      transparent 36%,
+      rgba(255, 255, 255, 0.8) 54%
+    );
+  }
+}
+
+.grp-form-login{
+  position: absolute;
+  top: 30%;
+  left: 41%;
+  .title {
+    font-size: 45pt;
+    color: #5e4b7a;
+  }
+
+  .infomation {
+    font-size: 27pt;
+    color: #8c595a;
+    padding-left: 9px;
+  }
+
+  .mgnt-sys {
+    font-size: 23pt;
+    padding-left: 160px;
+    margin-top: -6px;
+    color: #5e4b7a;
+  }
+  .title-child {
+    label {
+      color: #30388e;
+      font-size: 15pt;
+    }
+   
+  }
+}
+
+.login-form {
+  max-width: 300px;
+  .error {
+    color: red;
+  }
+  .register {
+    color: #1890ff;
+  }
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+.alert-err {
+  width: 301px;
+  background: #fbd7d7;
+  border-style: solid;
+  border-color: #f14f4f;
+  border-width: 1px;
+  i {
+    color: red;
+    width: 25px;
+  }
+}
+
+
